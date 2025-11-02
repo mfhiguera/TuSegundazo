@@ -1,0 +1,10 @@
+.banner {
+  height: 300px;
+  overflow: hidden;
+}
+
+.banner img {
+  object-fit: cover;
+  height: 100%;
+  filter: brightness(80%);
+}
