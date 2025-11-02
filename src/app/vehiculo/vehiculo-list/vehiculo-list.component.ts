@@ -10,13 +10,19 @@ import { VehiculoService } from '../vehiculo.service';
 export class VehiculoListComponent implements OnInit {
 
   vehiculos: Array<Vehiculo> = [];
+  totalesPorMarca: { [marca: string]: number } = {};
 
   constructor(private vehiculoService: VehiculoService) { }
 
   getVehiculos(): void {
     this.vehiculoService.getVehiculos().subscribe(vehiculos => {
       this.vehiculos = vehiculos;
+      this.calcularTotales();
     });
+  }
+
+  calcularTotales(): void {
+    this.totalesPorMarca = this.vehiculos.reduce((acc: { [key: string]: number }, v) => ((acc[v.marca] = (acc[v.marca] || 0) + 1), acc), {});
   }
 
   ngOnInit() {

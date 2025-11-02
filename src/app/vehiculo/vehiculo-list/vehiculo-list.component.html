@@ -18,5 +18,12 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Totales por marca -->
+    <div class="mt-3">
+      <p *ngIf="totalesPorMarca['Renault']"><strong>Total Renault:</strong> {{ totalesPorMarca['Renault'] }}</p>
+      <p *ngIf="totalesPorMarca['Chevrolet']"><strong>Total Chevrolet:</strong> {{ totalesPorMarca['Chevrolet'] }}</p>
+      <p *ngIf="totalesPorMarca['Nissan']"><strong>Total Nissan:</strong> {{ totalesPorMarca['Nissan'] }}</p>
+    </div>
   </div>
 </div>
